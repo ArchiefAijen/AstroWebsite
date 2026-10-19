@@ -1,0 +1,230 @@
+/* Algemene opmaak */
+body {
+    background-color: #fcebd9;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 10px;
+    color: #333333;
+    background-image: url('images/background.png');
+    background-repeat: repeat-y;
+    background-position: center top
+}
+
+/* De totale papier-container */
+.paper-container {
+    width: 100%;
+    max-width: 960px; /* Vaste max-breedte op desktop, flexibel op mobiel */
+    margin: 0 auto;
+    background-color: #f7ede2;
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+/* Header Banner */
+.header-banner {
+    width: 100%;
+    max-width: 960px; /* Vaste max-breedte op desktop, flexibel op mobiel */
+    margin-bottom: 15px;
+    text-align: center;
+        margin: 0 auto 20px auto;
+}
+
+.header-banner .banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Hoofd-layout: Standaard op desktop naast elkaar */
+.main-content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+/* Linker Zijbalk / Menu */
+.sidebar-menu {
+    width: 240px;
+    background-color: #3d342d;
+    padding: 15px 10px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 8px;
+    background-color: #cb893a;
+    border: none;
+    color: #ffffff;
+    font-size: 13px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.search-box input::placeholder {
+    color: #e0d0c0;
+}
+
+.sidebar-menu h2 {
+    color: #ffffff;
+    font-size: 18px;
+    margin: 0 0 10px 5px;
+    font-weight: normal;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    margin-bottom: 2px;
+}
+
+.sidebar-menu li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    color: #c2b5a7;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.sidebar-menu li a:hover {
+    color: #ffffff;
+    background-color: #4a4038;
+}
+
+.sidebar-menu li a.active {
+    background-color: #d18228;
+    color: #ffffff;
+}
+
+.sidebar-menu .arrow {
+    font-size: 12px;
+    color: #a09080;
+}
+
+/* Content Area */
+.content-area {
+    flex-grow: 1;
+    padding: 15px;
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+/* Thumbnail Galerij bovenaan */
+.top-gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.top-gallery img {
+    flex: 1 1 calc(20% - 8px);
+    min-width: 60px;
+    height: 70px;
+    object-fit: cover;
+    border: 1px solid #cccccc;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Intro Text */
+.intro-text h1 {
+    font-size: 18px;
+    color: #4a3c31;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.intro-text p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #444444;
+    margin-bottom: 12px;
+}
+
+/* Middenfoto & Facebook CTA */
+.featured-photo {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.featured-photo img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #d2c4b5;
+}
+
+.featured-photo h2 {
+    font-size: 16px;
+    color: #333333;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Footer */
+.site-footer {
+    margin-top: 30px;
+    font-size: 11px;
+    color: #666666;
+    padding-top: 10px;
+}
+
+
+/* ===================================================
+   RESPONSIVE MEDIA QUERIES (Gecorrigeerde haakjes)
+   =================================================== */
+
+/* Tablet en mobiel (Schermen smaller dan 768px) */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
+    .paper-container {
+        padding: 10px;
+    }
+
+    /* Zet het menu BOVEN de content bij verkleinen */
+    .main-content {
+        flex-direction: column;
+    }
+
+    /* Menu pakt de volle breedte */
+    .sidebar-menu {
+        width: 100%;
+    }
+
+    /* Miniatuurgalerij past zich aan */
+    .top-gallery img {
+        flex: 1 1 calc(33.33% - 8px);
+        height: 80px;
+    }
+}
+
+/* Mobiel klein (Schermen smaller dan 480px) */
+@media screen and (max-width: 480px) {
+    .top-gallery img {
+        flex: 1 1 calc(50% - 8px);
+        height: 70px;
+    }
+
+    .intro-text h1 {
+        font-size: 16px;
+    }
+
+    .intro-text p {
+        font-size: 12px;
+    }
+}
